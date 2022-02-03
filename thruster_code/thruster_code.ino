@@ -1,8 +1,5 @@
 #include <Servo.h>
 
-char header = 1;
-char footer = 10;
-
 Servo motFR;
 Servo motBR;
 Servo motBL;
@@ -69,7 +66,6 @@ void loop() {
       else if (motor == 7){
         motL.writeMicroseconds(m);
       } 
-      else if 
     }
   }
 }
