@@ -1,8 +1,5 @@
 #include <Servo.h>
 
-char header = 1;
-char footer = 10;
-
 Servo motFR;
 Servo motBR;
 Servo motBL;
@@ -45,10 +42,10 @@ void loop() {
       if (m == 0){
         m = 1500;
       }
-      else if (m < 0){ //[-127,0) / [1000,1500)
+      else if (m < 0){ 
         m = map(m, -127, -1, 1000, 1499);
       }
-      else if (m > 0){ //(0,127] / (1500,2000]
+      else if (m > 0){
         m = map(m, 1, 127, 1501, 2000);
       }   
       if (motor == 2){
@@ -69,7 +66,21 @@ void loop() {
       else if (motor == 7){
         motL.writeMicroseconds(m);
       } 
-      else if 
+      else if (motor == 11){
+        //stop servo
+      }
+      else if (motor == 13){
+        motFR.writeMicroseconds(m);
+        motFL.writeMicroseconds(m);
+        motBR.writeMicroseconds(m);
+        motBL.writeMicroseconds(m);
+      }
+      else if (motor == 14){
+        motFR.writeMicroseconds(m);
+        motFL.writeMicroseconds(m);
+        motBR.writeMicroseconds(m);
+        motBL.writeMicroseconds(m);
+      }
     }
   }
 }
